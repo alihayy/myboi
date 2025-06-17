@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secret Birthday Surprise</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 💡 Pastel theme with dark text -->
+  <style>
+      body {
+          background: #f8f1ff; /* light pastel background */
+          color: #333; /* dark text */
+      }
+      .neon-text {
+          color: #7f5af0;
+          text-shadow: 0 0 5px #c3b5f7, 0 0 10px #c3b5f7, 0 0 20px #c3b5f7;
+      }
+      .gift-img {
+          max-width: 220px;
+          filter: drop-shadow(0 0 6px #a78bfa);
+          cursor: pointer;
+      }
+      .border-neon {
+          border: 2px solid #a78bfa;
+          box-shadow: 0 0 8px #a78bfa;
+      }
+      .icon {
+          width: 75px;
+          filter: drop-shadow(0 0 5px #a78bfa);
+      }
+      .card {
+          background-color: #fff7ff; /* very light pastel card background */
+      }
+      .btn-outline-info {
+          border-color: #a78bfa;
+          color: #7f5af0;
+      }
+      .btn-outline-info:hover {
+          background-color: #a78bfa;
+          color: white;
+      }
+  </style>
+</head>
+<body class="d-flex flex-column justify-content-center align-items-center min-vh-100 text-center">
+
+  <div class="container">
+    <!-- Heading -->
+    <h1 class="display-4 fw-bold neon-text mb-5">HAPPY BIRTHDAY MY BOI</h1>
+
+    <!-- 🎁 Gift‑box cover (first click) -->
+    <button id="giftBtn" class="btn p-0 border-0 bg-transparent" data-bs-toggle="collapse" data-bs-target="#photoCollapse" aria-expanded="false" aria-controls="photoCollapse">
+        <img src="gift.jpg" alt="Open Gift" class="gift-img">
+    </button>
+
+    <!-- 📸 Photo reveal (second layer) -->
+    <div class="collapse mt-4" id="photoCollapse">
+        <div class="card border-neon mx-auto" style="max-width:420px;">
+            <img src="IMG_3781.JPG" class="card-img-top" alt="Us Together">
+            <div class="card-body">
+                <button class="btn btn-outline-info w-100" data-bs-toggle="collapse" data-bs-target="#wishCollapse" aria-expanded="false" aria-controls="wishCollapse">Tap to Read Wish</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 💌 Wish reveal (final layer) -->
+    <div class="collapse mt-4" id="wishCollapse">
+        <div class="card border-neon mx-auto" style="max-width:700px;">
+            <div class="card-body">
+                <h2 class="neon-text mb-3">18 June</h2>
+                <p class="lead text-start" style="white-space:pre-line;">
+Happy birthday to the love of my life, the best decision I ever made. You're the most beautiful person I've ever met. I wish for your eternal happiness and for us to spend forever together. I have so much to say, but words fail me. You're a gem I wouldn't trade for anything. Your support and means everything to me. I never imagined finding someone like you, but here you are making my dreams a reality. You deserve all the happiness in the world, and I want to spend it with you. I want our bond to be halal and for us to reach Jannah together. The past year with you has been the best year of my 22 years of life. You've given me a sense of peace that no one else can. You're my perfection, my definition of a real man. You respect women in a way that I admire and aspire to. I love you more than words can express.
+
+The way you stood by me like a rock is something no one else can replicate. Your support, love, and gentle words make me feel seen and loved. The way you talk to me, look at me, and make me feel at home is everything to me 🫠🫠🫠
+
+Mjhy nhi pta ky how to make you feel special today, but I'm trying my best cuz you truly are special. Your love and respect mean the world to me and I couldn't even imagine life without you..
+
+May Allah bless you with happiness, prosperity, and good health. May your birthday be a new beginning for you, filled with opportunities and success. May Allah grant you wisdom, knowledge, and guidance. May your life be filled with love, peace, and joy. May Allah protect you from all harm and evil. May your heart remain pure, and your spirit stay strong. May Allah fulfill all your dreams and desires. Ameen.
+                </p>
+            </div>
+        </div>
+
+        <!-- 🎾🏎️ Interests row -->
+        <div class="mt-5 d-flex justify-content-center gap-4 flex-wrap">
+            <img src="racket.jpg" class="icon" alt="Badminton Racket">
+            <img src="porsch.avif" class="icon" alt="Porsche">
+            <span class="badge bg-info fs-5">G11</span>
+        </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS + Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Confetti library (canvas‑confetti) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+      // 🎉 Fire confetti on first click
+      document.getElementById('giftBtn').addEventListener('click', () => {
+          confetti({
+              particleCount: 120,
+              spread: 70,
+              origin: { y: 0.6 }
+          });
+      });
+  </script>
+</body>
+</html>
